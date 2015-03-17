@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0ED8478A1AB89E2D00710ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED847891AB89E2D00710ABA /* AppDelegate.swift */; };
+		0ED8478C1AB89E2D00710ABA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8478B1AB89E2D00710ABA /* Images.xcassets */; };
+		0ED8478F1AB89E2D00710ABA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8478D1AB89E2D00710ABA /* MainMenu.xib */; };
+		0ED8479B1AB89E2E00710ABA /* PushToTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8479A1AB89E2E00710ABA /* PushToTalkTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0ED847951AB89E2E00710ABA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0ED8477C1AB89E2D00710ABA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ED847831AB89E2D00710ABA;
+			remoteInfo = PushToTalk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0ED847841AB89E2D00710ABA /* PushToTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushToTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ED847881AB89E2D00710ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ED847891AB89E2D00710ABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0ED8478B1AB89E2D00710ABA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0ED8478E1AB89E2D00710ABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0ED847941AB89E2E00710ABA /* PushToTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushToTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ED847991AB89E2E00710ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ED8479A1AB89E2E00710ABA /* PushToTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushToTalkTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0ED847811AB89E2D00710ABA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ED847911AB89E2E00710ABA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0ED8477B1AB89E2D00710ABA = {
+			isa = PBXGroup;
+			children = (
+				0ED847861AB89E2D00710ABA /* PushToTalk */,
+				0ED847971AB89E2E00710ABA /* PushToTalkTests */,
+				0ED847851AB89E2D00710ABA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0ED847851AB89E2D00710ABA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0ED847841AB89E2D00710ABA /* PushToTalk.app */,
+				0ED847941AB89E2E00710ABA /* PushToTalkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0ED847861AB89E2D00710ABA /* PushToTalk */ = {
+			isa = PBXGroup;
+			children = (
+				0ED847891AB89E2D00710ABA /* AppDelegate.swift */,
+				0ED8478B1AB89E2D00710ABA /* Images.xcassets */,
+				0ED8478D1AB89E2D00710ABA /* MainMenu.xib */,
+				0ED847871AB89E2D00710ABA /* Supporting Files */,
+			);
+			path = PushToTalk;
+			sourceTree = "<group>";
+		};
+		0ED847871AB89E2D00710ABA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0ED847881AB89E2D00710ABA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0ED847971AB89E2E00710ABA /* PushToTalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				0ED8479A1AB89E2E00710ABA /* PushToTalkTests.swift */,
+				0ED847981AB89E2E00710ABA /* Supporting Files */,
+			);
+			path = PushToTalkTests;
+			sourceTree = "<group>";
+		};
+		0ED847981AB89E2E00710ABA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0ED847991AB89E2E00710ABA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0ED847831AB89E2D00710ABA /* PushToTalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ED8479E1AB89E2E00710ABA /* Build configuration list for PBXNativeTarget "PushToTalk" */;
+			buildPhases = (
+				0ED847801AB89E2D00710ABA /* Sources */,
+				0ED847811AB89E2D00710ABA /* Frameworks */,
+				0ED847821AB89E2D00710ABA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PushToTalk;
+			productName = PushToTalk;
+			productReference = 0ED847841AB89E2D00710ABA /* PushToTalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0ED847931AB89E2E00710ABA /* PushToTalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ED847A11AB89E2E00710ABA /* Build configuration list for PBXNativeTarget "PushToTalkTests" */;
+			buildPhases = (
+				0ED847901AB89E2E00710ABA /* Sources */,
+				0ED847911AB89E2E00710ABA /* Frameworks */,
+				0ED847921AB89E2E00710ABA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0ED847961AB89E2E00710ABA /* PBXTargetDependency */,
+			);
+			name = PushToTalkTests;
+			productName = PushToTalkTests;
+			productReference = 0ED847941AB89E2E00710ABA /* PushToTalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0ED8477C1AB89E2D00710ABA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = yulrizka;
+				TargetAttributes = {
+					0ED847831AB89E2D00710ABA = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					0ED847931AB89E2E00710ABA = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 0ED847831AB89E2D00710ABA;
+					};
+				};
+			};
+			buildConfigurationList = 0ED8477F1AB89E2D00710ABA /* Build configuration list for PBXProject "PushToTalk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0ED8477B1AB89E2D00710ABA;
+			productRefGroup = 0ED847851AB89E2D00710ABA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0ED847831AB89E2D00710ABA /* PushToTalk */,
+				0ED847931AB89E2E00710ABA /* PushToTalkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0ED847821AB89E2D00710ABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ED8478C1AB89E2D00710ABA /* Images.xcassets in Resources */,
+				0ED8478F1AB89E2D00710ABA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ED847921AB89E2E00710ABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0ED847801AB89E2D00710ABA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ED8478A1AB89E2D00710ABA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ED847901AB89E2E00710ABA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ED8479B1AB89E2E00710ABA /* PushToTalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0ED847961AB89E2E00710ABA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0ED847831AB89E2D00710ABA /* PushToTalk */;
+			targetProxy = 0ED847951AB89E2E00710ABA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0ED8478D1AB89E2D00710ABA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0ED8478E1AB89E2D00710ABA /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0ED8479C1AB89E2E00710ABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0ED8479D1AB89E2E00710ABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0ED8479F1AB89E2E00710ABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PushToTalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0ED847A01AB89E2E00710ABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PushToTalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0ED847A21AB89E2E00710ABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PushToTalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushToTalk.app/Contents/MacOS/PushToTalk";
+			};
+			name = Debug;
+		};
+		0ED847A31AB89E2E00710ABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PushToTalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushToTalk.app/Contents/MacOS/PushToTalk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0ED8477F1AB89E2D00710ABA /* Build configuration list for PBXProject "PushToTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ED8479C1AB89E2E00710ABA /* Debug */,
+				0ED8479D1AB89E2E00710ABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ED8479E1AB89E2E00710ABA /* Build configuration list for PBXNativeTarget "PushToTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ED8479F1AB89E2E00710ABA /* Debug */,
+				0ED847A01AB89E2E00710ABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0ED847A11AB89E2E00710ABA /* Build configuration list for PBXNativeTarget "PushToTalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ED847A21AB89E2E00710ABA /* Debug */,
+				0ED847A31AB89E2E00710ABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0ED8477C1AB89E2D00710ABA /* Project object */;
+}
