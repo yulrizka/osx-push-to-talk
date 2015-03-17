@@ -393,6 +393,7 @@
 				0ED847A01AB89E2E00710ABA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0ED847A11AB89E2E00710ABA /* Build configuration list for PBXNativeTarget "PushToTalkTests" */ = {
 			isa = XCConfigurationList;
@@ -401,6 +402,7 @@
 				0ED847A31AB89E2E00710ABA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

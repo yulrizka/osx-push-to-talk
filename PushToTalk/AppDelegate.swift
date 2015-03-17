@@ -8,57 +8,70 @@
 
 import Cocoa
 import AudioToolbox
+import Foundation
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var menuItemToggle: NSMenuItem!
     
     let keyDownMask = 0x80140
     let keyUpMask = 0x100
     var talking = false
     var enable = true
     
+    var talkIcon:NSImage?
+    var muteIcon:NSImage?
+    
+    
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
         // add status menu
-        let talkIcon = NSImage(named: "statusIconTalk")
-        let muteIcon = NSImage(named: "statusIconMute")
+        talkIcon = NSImage(named: "statusIconTalk")
+        muteIcon = NSImage(named: "statusIconMute")
+        updateToggleTitle()
         
-        statusItem.image = talkIcon
+        statusItem.image = muteIcon
         statusItem.menu = statusMenu
+        
 
-        NSEvent.addGlobalMonitorForEventsMatchingMask(NSEventMask.FlagsChangedMask, handler: { theEvent in
-            
-            if !self.enable {
-                return
-            }
-            
-            if theEvent.keyCode == 61 {
-                if(theEvent.modifierFlags & NSEventModifierFlags.AlternateKeyMask != nil) {
-                    println("down")
-                } else if theEvent.modifierFlags != nil {
-                    println("up")
-                }
-            }
-            
+        // handle when application is on background
+        NSEvent.addGlobalMonitorForEventsMatchingMask(NSEventMask.FlagsChangedMask, handler: handleFlagChangedEvent)
+        
+        // handle when application is on foreground
+        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.FlagsChangedMask, handler: { (theEvent) -> NSEvent! in
+            self.handleFlagChangedEvent(theEvent)
+            return theEvent
         })
+    }
+    
+    func handleFlagChangedEvent(theEvent:NSEvent!) {
+        if !self.enable {
+            return
+        }
+        
+        if theEvent.keyCode == 61 {
+            if(theEvent.modifierFlags & NSEventModifierFlags.AlternateKeyMask != nil) {
+                self.toggleMic(true)
+            } else if theEvent.modifierFlags != nil {
+                self.toggleMic(false)
+            }
+        }
     }
     
     func toggleMic(enable:Bool) {
         if (enable) {
-            
+            statusItem.image = talkIcon
         } else {
-            
+            statusItem.image = muteIcon
         }
     }
 
-    @IBAction func toggleAction(sender: NSMenuItem) {
-        mute()
-    }
+    
 
     func mute() {
         /*
@@ -123,6 +136,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AudioObjectGetPropertyData(defaultOutputDeviceID, &volumePropertyAddress, 0, nil, &volumeSize, &volume)
 
         println(volume)
+    }
+    
+    func updateToggleTitle() {
+        if (enable) {
+            menuItemToggle.title = "Disable"
+        } else {
+            menuItemToggle.title = "Enable"
+        }
+    }
+    
+    // MARK: Menu item Actions
+    @IBAction func toggleAction(sender: NSMenuItem) {
+        enable = !enable
+        updateToggleTitle()
+    }
+    
+    @IBAction func menuItemQuitAction(sender: NSMenuItem) {
+        exit(0)
     }
 }
 
