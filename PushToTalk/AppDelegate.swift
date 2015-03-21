@@ -163,6 +163,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func menuItemQuitAction(sender: NSMenuItem) {
+        toggleMute(false)
         exit(0)
     }
 }
