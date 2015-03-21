@@ -1,0 +1,11 @@
+{
+  "title": "PushToTalk",
+  "icon": "PushToTalk.icns",
+  "background": "background.png",
+  "icon-size": 80,
+
+  "contents": [
+    { "x": 70, "y": 118, "type": "link", "path": "/Applications" },
+    { "x": 220, "y": 118, "type": "file", "path": "PushToTalk.app" }
+  ]
+}
