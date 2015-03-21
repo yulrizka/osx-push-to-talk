@@ -6,4 +6,4 @@ When the Application strat, it will add a status icon. Hold **Right options** ke
 
 The icon indicator will be translucent if microphone is muted.
 
-Application Installer (dmg) can be downloaded in the [https://github.com/yulrizka/osx-push-to-talk/releases](Release]) Section
+Application Installer (dmg) can be downloaded in the [Release](https://github.com/yulrizka/osx-push-to-talk/releases) Section
