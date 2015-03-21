@@ -49,6 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         })
     }
     
+    
     func handleFlagChangedEvent(theEvent:NSEvent!) {
         if !self.enable {
             return
@@ -63,53 +64,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    /**
+    Helper function triggered whenever the button in pressed
+    
+    :param: enable set the state of the microphone
+    */
     func toggleMic(enable:Bool) {
         if (enable) {
+            toggleMute(false)
             statusItem.image = talkIcon
         } else {
+            toggleMute(true)
             statusItem.image = muteIcon
         }
     }
 
+    /**
+    Function to get default output volume
     
-
-    func mute() {
-        /*
-        var defaultOutputDeviceID = AudioDeviceID(0)
-        var defaultOutputDeviceIDSize = UInt32(sizeofValue(defaultOutputDeviceID))
-        
-        var getDefaultOutputDevicePropertyAddress = AudioObjectPropertyAddress(
-            mSelector: AudioObjectPropertySelector(kAudioHardwarePropertyDefaultInputDevice),
-            mScope: AudioObjectPropertyScope(kAudioObjectPropertyScopeGlobal),
-            mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
-        
-        let status1 = AudioObjectGetPropertyData(
-            AudioObjectID(kAudioObjectSystemObject),
-            &getDefaultOutputDevicePropertyAddress,
-            0,
-            nil,
-            &defaultOutputDeviceIDSize,
-            &defaultOutputDeviceID)
-        
-        var volume = Float32(0.50) // 0.0 ... 1.0
-        var volumeSize = UInt32(sizeofValue(volume))
-        
-        var volumePropertyAddress = AudioObjectPropertyAddress(
-            mSelector: AudioObjectPropertySelector(kAudioHardwareServiceDeviceProperty_VirtualMasterVolume),
-            mScope: AudioObjectPropertyScope(kAudioDevicePropertyScopeOutput),
-            mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
-        
-        let status2 = AudioHardwareServiceSetPropertyData(
-            defaultOutputDeviceID,
-            &volumePropertyAddress,
-            0,
-            nil,
-            volumeSize,
-            &volume)
-        */
-      
-        /* https://github.com/paulreimer/ofxAudioFeatures/blob/master/src/ofxAudioDeviceControl.mm */
-        var defaultOutputDeviceID = AudioDeviceID(0)
+    :param: defaultOutputDeviceID inputoutput variable result of deviceID
+    */
+    func getDefaultInputDevice(inout defaultOutputDeviceID:UInt32)  {
+        defaultOutputDeviceID = AudioDeviceID(0)
         var defaultOutputDeviceIDSize = UInt32(sizeofValue(defaultOutputDeviceID))
         
         var getDefaultInputDevicePropertyAddress = AudioObjectPropertyAddress(
@@ -124,7 +100,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             nil,
             &defaultOutputDeviceIDSize,
             &defaultOutputDeviceID)
-
+    }
+    
+    /**
+    Return default Output volume
+    
+    :returns: default output folume level 0.0 ... 1.0
+    */
+    func getDefaultOutputVolume() -> Float32 {
+        var defaultInputDeviceId = AudioDeviceID(0)
+        getDefaultInputDevice(&defaultInputDeviceId)
+        
+        // show volume
         var volume = Float32(0.50) // 0.0 ... 1.0
         var volumeSize = UInt32(sizeofValue(volume))
         
@@ -133,9 +120,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             mScope: AudioObjectPropertyScope(kAudioDevicePropertyScopeInput),
             mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
         
-        AudioObjectGetPropertyData(defaultOutputDeviceID, &volumePropertyAddress, 0, nil, &volumeSize, &volume)
+        AudioObjectGetPropertyData(defaultInputDeviceId, &volumePropertyAddress, 0, nil, &volumeSize, &volume)
+        
+        return volume
+    }
 
-        println(volume)
+    /**
+    Function to mute the default input microphone
+    */
+    func toggleMute(mute:Bool) {
+      
+        /* https://github.com/paulreimer/ofxAudioFeatures/blob/master/src/ofxAudioDeviceControl.mm */
+        
+        var defaultInputDeviceId = AudioDeviceID(0)
+        getDefaultInputDevice(&defaultInputDeviceId)
+
+        // set mute
+        var address = AudioObjectPropertyAddress(
+            mSelector: AudioObjectPropertySelector(kAudioDevicePropertyMute),
+            mScope: AudioObjectPropertyScope(kAudioDevicePropertyScopeInput),
+            mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
+        
+        var size = UInt32(sizeof(UInt32))
+        var mute:UInt32 = mute ? 1 : 0;
+        
+        let err = AudioObjectSetPropertyData(defaultInputDeviceId, &address, 0, nil, size, &mute)
     }
     
     func updateToggleTitle() {
@@ -149,6 +158,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: Menu item Actions
     @IBAction func toggleAction(sender: NSMenuItem) {
         enable = !enable
+        toggleMute(enable)
         updateToggleTitle()
     }
     
