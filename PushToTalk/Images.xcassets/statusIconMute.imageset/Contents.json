@@ -3,16 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "ptt-mute.png"
+      "filename" : "microphone-icon-muted-16.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "ptt-mute@2x.png"
+      "filename" : "microphone-icon-muted-32.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "microphone-icon-muted-64.png"
     }
   ],
   "info" : {
