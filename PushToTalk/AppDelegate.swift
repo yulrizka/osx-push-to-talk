@@ -55,13 +55,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         
-        if theEvent.keyCode == 61 {
-            if(theEvent.modifierFlags & NSEventModifierFlags.AlternateKeyMask != nil) {
-                self.toggleMic(true)
-            } else if theEvent.modifierFlags != nil {
-                self.toggleMic(false)
-            }
-        }
+        if theEvent.modifierFlags.contains(.AlternateKeyMask) {
+           self.toggleMic(true)
+        } else {
+           self.toggleMic(false)
+        }    
     }
     
     /**
