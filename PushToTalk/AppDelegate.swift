@@ -48,7 +48,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var menuItemToggle: NSMenuItem!
     
-    var status: MicrophoneStatus = .Muted
+    var status: MicrophoneStatus = .Muted {
+        didSet {
+            self.menuItemToggle.title = status.title()
+            self.statusItem.image = status.image()
+            self.toggleMute(status == .Muted)
+        }
+    }
     
     var enable = true
     
@@ -60,12 +66,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        // add status menu
-        talkIcon = NSImage(named: "statusIconTalk")
-        muteIcon = NSImage(named: "statusIconMute")
-        updateToggleTitle()
-        
-        statusItem.image = self.status.image()
+        self.status = .Muted
         statusItem.menu = statusMenu
         
 
@@ -81,13 +82,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func handleFlagChangedEvent(_ theEvent: NSEvent!) {
-        guard self.enable else { return }
         guard theEvent.keyCode == 61 else { return }
         
         if (theEvent.modifierFlags.contains(.option)) {
-            self.toggleMic(true)
+            self.status = .Speaking
         } else if (theEvent.modifierFlags.contains(.option) == false) {
-            self.toggleMic(false)
+            self.status = .Muted
         }
     }
     
@@ -99,11 +99,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func toggleMic(_ enable:Bool) {
         DispatchQueue.main.async {
             if (enable) {
-                self.toggleMute(false)
-                self.statusItem.image = self.talkIcon
+                self.status = .Speaking
             } else {
-                self.toggleMute(true)
-                self.statusItem.image = self.muteIcon
+                self.status = .Muted
             }
         }
     }
@@ -176,24 +174,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let _ = AudioObjectSetPropertyData(defaultInputDeviceId, &address, 0, nil, size, &mute)
     }
     
-    func updateToggleTitle() {
-        if (enable) {
-            menuItemToggle.title = "Disable"
-        } else {
-            menuItemToggle.title = "Enable"
-        }
-    }
-    
     // MARK: Menu item Actions
     @IBAction func toggleAction(_ sender: NSMenuItem) {
-        
-        enable = !enable
-        toggleMute(enable)
-        updateToggleTitle()
+        self.status = (self.status == .Speaking) ? .Muted : .Speaking
     }
     
     @IBAction func menuItemQuitAction(_ sender: NSMenuItem) {
-        toggleMute(false)
+        self.status = .Speaking
         exit(0)
     }
 }
