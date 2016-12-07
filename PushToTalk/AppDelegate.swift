@@ -26,9 +26,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var muteIcon:NSImage?
     
     
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    let statusItem = NSStatusBar.system().statusItem(withLength: -1)
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         // add status menu
         talkIcon = NSImage(named: "statusIconTalk")
@@ -40,22 +40,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
 
         // handle when application is on background
-        NSEvent.addGlobalMonitorForEventsMatchingMask(NSEventMask.FlagsChangedMask, handler: handleFlagChangedEvent)
+        NSEvent.addGlobalMonitorForEvents(matching: NSEventMask.flagsChanged, handler: handleFlagChangedEvent)
         
         // handle when application is on foreground
-        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.FlagsChangedMask, handler: { (theEvent) -> NSEvent! in
+        NSEvent.addLocalMonitorForEvents(matching: NSEventMask.flagsChanged, handler: { (theEvent) -> NSEvent! in
             self.handleFlagChangedEvent(theEvent)
             return theEvent
         })
     }
     
     
-    func handleFlagChangedEvent(theEvent:NSEvent!) {
+    func handleFlagChangedEvent(_ theEvent:NSEvent!) {
         if !self.enable {
             return
         }
         
-        if theEvent.modifierFlags.contains(.AlternateKeyMask) {
+        if theEvent.modifierFlags.contains(.option) {
            self.toggleMic(true)
         } else {
            self.toggleMic(false)
@@ -67,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     :param: enable set the state of the microphone
     */
-    func toggleMic(enable:Bool) {
+    func toggleMic(_ enable:Bool) {
         if (enable) {
             toggleMute(false)
             statusItem.image = talkIcon
@@ -82,9 +82,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     :param: defaultOutputDeviceID inputoutput variable result of deviceID
     */
-    func getDefaultInputDevice(inout defaultOutputDeviceID:UInt32)  {
+    func getDefaultInputDevice(_ defaultOutputDeviceID:inout UInt32)  {
         defaultOutputDeviceID = AudioDeviceID(0)
-        var defaultOutputDeviceIDSize = UInt32(sizeofValue(defaultOutputDeviceID))
+        var defaultOutputDeviceIDSize = UInt32(MemoryLayout.size(ofValue: defaultOutputDeviceID))
         
         var getDefaultInputDevicePropertyAddress = AudioObjectPropertyAddress(
             mSelector: AudioObjectPropertySelector(kAudioHardwarePropertyDefaultInputDevice),
@@ -111,7 +111,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // show volume
         var volume = Float32(0.50) // 0.0 ... 1.0
-        var volumeSize = UInt32(sizeofValue(volume))
+        var volumeSize = UInt32(MemoryLayout.size(ofValue: volume))
         
         var volumePropertyAddress = AudioObjectPropertyAddress(
             mSelector: AudioObjectPropertySelector(kAudioDevicePropertyVolumeScalar),
@@ -126,7 +126,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /**
     Function to mute the default input microphone
     */
-    func toggleMute(mute:Bool) {
+    func toggleMute(_ mute:Bool) {
       
         /* https://github.com/paulreimer/ofxAudioFeatures/blob/master/src/ofxAudioDeviceControl.mm */
         
@@ -139,7 +139,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             mScope: AudioObjectPropertyScope(kAudioDevicePropertyScopeInput),
             mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
         
-        var size = UInt32(sizeof(UInt32))
+        let size = UInt32(MemoryLayout<UInt32>.size)
         var mute:UInt32 = mute ? 1 : 0;
         
         let err = AudioObjectSetPropertyData(defaultInputDeviceId, &address, 0, nil, size, &mute)
@@ -154,13 +154,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     // MARK: Menu item Actions
-    @IBAction func toggleAction(sender: NSMenuItem) {
+    @IBAction func toggleAction(_ sender: NSMenuItem) {
         enable = !enable
         toggleMute(enable)
         updateToggleTitle()
     }
     
-    @IBAction func menuItemQuitAction(sender: NSMenuItem) {
+    @IBAction func menuItemQuitAction(_ sender: NSMenuItem) {
         toggleMute(false)
         exit(0)
     }
