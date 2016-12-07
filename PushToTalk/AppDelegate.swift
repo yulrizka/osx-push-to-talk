@@ -148,8 +148,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func updateToggleTitle() {
         if (enable) {
             menuItemToggle.title = "Disable"
+            statusItem.image = muteIcon
         } else {
             menuItemToggle.title = "Enable"
+            statusItem.image = talkIcon
         }
     }
     
