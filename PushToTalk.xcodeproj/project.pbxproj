@@ -11,6 +11,8 @@
 		0ED8478C1AB89E2D00710ABA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8478B1AB89E2D00710ABA /* Images.xcassets */; };
 		0ED8478F1AB89E2D00710ABA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8478D1AB89E2D00710ABA /* MainMenu.xib */; };
 		0ED8479B1AB89E2E00710ABA /* PushToTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8479A1AB89E2E00710ABA /* PushToTalkTests.swift */; };
+		BA7BED191DF5ECA9004DA990 /* MicrophoneStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BED181DF5ECA9004DA990 /* MicrophoneStatus.swift */; };
+		BA7BED1B1DF5EE9E004DA990 /* Microphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BED1A1DF5EE9E004DA990 /* Microphone.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		0ED847941AB89E2E00710ABA /* PushToTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushToTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED847991AB89E2E00710ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ED8479A1AB89E2E00710ABA /* PushToTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushToTalkTests.swift; sourceTree = "<group>"; };
+		BA7BED181DF5ECA9004DA990 /* MicrophoneStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneStatus.swift; sourceTree = "<group>"; };
+		BA7BED1A1DF5EE9E004DA990 /* Microphone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Microphone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				0ED847891AB89E2D00710ABA /* AppDelegate.swift */,
+				BA7BED1A1DF5EE9E004DA990 /* Microphone.swift */,
+				BA7BED181DF5ECA9004DA990 /* MicrophoneStatus.swift */,
 				0ED8478B1AB89E2D00710ABA /* Images.xcassets */,
 				0ED8478D1AB89E2D00710ABA /* MainMenu.xib */,
 				0ED847871AB89E2D00710ABA /* Supporting Files */,
@@ -208,6 +214,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ED8478A1AB89E2D00710ABA /* AppDelegate.swift in Sources */,
+				BA7BED191DF5ECA9004DA990 /* MicrophoneStatus.swift in Sources */,
+				BA7BED1B1DF5EE9E004DA990 /* Microphone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
