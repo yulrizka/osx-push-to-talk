@@ -28,10 +28,10 @@ class Microphone {
     
     init() {
         // handle when application is on background
-        NSEvent.addGlobalMonitorForEvents(matching: NSEventMask.flagsChanged, handler: self.handleFlagChangedEvent)
+        NSEvent.addGlobalMonitorForEvents(matching: NSEvent.EventTypeMask.flagsChanged, handler: self.handleFlagChangedEvent)
         
         // handle when application is on foreground
-        NSEvent.addLocalMonitorForEvents(matching: NSEventMask.flagsChanged, handler: { (theEvent) -> NSEvent! in
+        NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.flagsChanged, handler: { (theEvent) -> NSEvent! in
             self.handleFlagChangedEvent(theEvent)
             return theEvent
         })
@@ -87,6 +87,6 @@ extension Microphone {
 extension Microphone {
     internal func handleFlagChangedEvent(_ theEvent: NSEvent!) {
         guard theEvent.keyCode == 61 else { return }
-        self.status = (theEvent.modifierFlags.contains(.option)) ? .Speaking : .Muted
+        self.status = (theEvent.modifierFlags.contains(NSEvent.ModifierFlags.option)) ? .Speaking : .Muted
     }
 }
