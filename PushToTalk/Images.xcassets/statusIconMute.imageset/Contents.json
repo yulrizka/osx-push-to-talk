@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "muted-mic 16.png",
+      "filename" : "microphone-red.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "muted-mic 32.png",
+      "filename" : "microphone-red-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "muted-mic 64.png",
+      "filename" : "microphone-red-2.png",
       "scale" : "3x"
     }
   ],
