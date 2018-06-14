@@ -10,50 +10,53 @@ import Cocoa
 import AudioToolbox
 
 class Microphone {
-    
-    typealias StatusUpdate = (MicrophoneStatus) -> ()
+
+    typealias StatusUpdate = (MicrophoneStatus) -> Void
     var statusUpdated: StatusUpdate?
-    
+
     /* Public method to set status of the microphone
      * 
      * @discussion
      *      This method calls necessary private methods to mute or unmute the microphone
      */
-    var status: MicrophoneStatus = .Muted {
+    var status: MicrophoneStatus = .muted {
         didSet {
-            self.setMuted(status == .Muted)
+            self.setMuted(status == .muted)
             self.statusUpdated?(status)
         }
     }
-    
+
     init() {
         // handle when application is on background
-        NSEvent.addGlobalMonitorForEvents(matching: NSEvent.EventTypeMask.flagsChanged, handler: self.handleFlagChangedEvent)
-        
+        NSEvent.addGlobalMonitorForEvents(matching: NSEvent.EventTypeMask.flagsChanged,
+                                          handler: self.handleFlagChangedEvent)
+
         // handle when application is on foreground
-        NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.flagsChanged, handler: { (theEvent) -> NSEvent! in
+        NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.flagsChanged,
+                                         handler: { (theEvent) -> NSEvent in
             self.handleFlagChangedEvent(theEvent)
             return theEvent
         })
     }
-    
+
     func toggle() {
-        self.status = (self.status == .Muted) ? .Speaking : .Muted
+        self.status = (self.status == .muted) ? .speaking : .muted
     }
 }
 
-// MARK - Sound Methods
+// MARK: - Sound Methods
+
 extension Microphone {
-    
-    internal func getDefaultInputDevice(_ defaultOutputDeviceID:inout UInt32)  {
+
+    internal func getDefaultInputDevice(_ defaultOutputDeviceID:inout UInt32) {
         defaultOutputDeviceID = AudioDeviceID(0)
         var defaultOutputDeviceIDSize = UInt32(MemoryLayout.size(ofValue: defaultOutputDeviceID))
-        
+
         var getDefaultInputDevicePropertyAddress = AudioObjectPropertyAddress(
             mSelector: AudioObjectPropertySelector(kAudioHardwarePropertyDefaultInputDevice),
             mScope: AudioObjectPropertyScope(kAudioObjectPropertyScopeGlobal),
             mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
-        
+
         AudioObjectGetPropertyData(
             AudioObjectID(kAudioObjectSystemObject),
             &getDefaultInputDevicePropertyAddress,
@@ -62,31 +65,32 @@ extension Microphone {
             &defaultOutputDeviceIDSize,
             &defaultOutputDeviceID)
     }
-    
-    internal func setMuted(_ muted:Bool) {
-        
+
+    internal func setMuted(_ muted: Bool) {
+
         /* https://github.com/paulreimer/ofxAudioFeatures/blob/master/src/ofxAudioDeviceControl.mm */
-        
+
         var defaultInputDeviceId = AudioDeviceID(0)
         self.getDefaultInputDevice(&defaultInputDeviceId)
-        
+
         // set mute
         var address = AudioObjectPropertyAddress(
             mSelector: AudioObjectPropertySelector(kAudioDevicePropertyMute),
             mScope: AudioObjectPropertyScope(kAudioDevicePropertyScopeInput),
             mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
-        
+
         let size = UInt32(MemoryLayout<UInt32>.size)
-        var mute:UInt32 = muted ? 1 : 0;
-        
+        var mute: UInt32 = muted ? 1 : 0
+
         AudioObjectSetPropertyData(defaultInputDeviceId, &address, 0, nil, size, &mute)
     }
 }
 
-// MARK - Event Handling
+// MARK: - Event Handling
+
 extension Microphone {
     internal func handleFlagChangedEvent(_ theEvent: NSEvent!) {
         guard theEvent.keyCode == 61 else { return }
-        self.status = (theEvent.modifierFlags.contains(NSEvent.ModifierFlags.option)) ? .Speaking : .Muted
+        self.status = (theEvent.modifierFlags.contains(NSEvent.ModifierFlags.option)) ? .speaking : .muted
     }
 }

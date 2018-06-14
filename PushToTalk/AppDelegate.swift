@@ -16,9 +16,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var menuItemToggle: NSMenuItem!
-    
+
     let microphone = Microphone()
-    
+
     let statusItem = NSStatusBar.system.statusItem(withLength: -1)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -27,19 +27,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.menuItemToggle.title = status.title()
             self.statusItem.image = status.image()
         }
-        
-        self.microphone.status = .Muted
+
+        self.microphone.status = .muted
     }
-    
-    
+
     // MARK: Menu item Actions
     @IBAction func toggleAction(_ sender: NSMenuItem) {
         self.microphone.toggle()
     }
-    
+
     @IBAction func menuItemQuitAction(_ sender: NSMenuItem) {
-        self.microphone.status = .Speaking
+        self.microphone.status = .speaking
         exit(0)
     }
 }
-

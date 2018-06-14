@@ -14,27 +14,26 @@ protocol AssociatedImage {
 }
 
 enum MicrophoneStatus {
-    case Muted
-    case Speaking
+    case muted
+    case speaking
 }
 
 extension MicrophoneStatus: AssociatedImage {
     func image() -> NSImage {
         switch self {
-        case .Muted:
+        case .muted:
             return NSImage(named: NSImage.Name(rawValue: "statusIconMute"))!
-        case .Speaking:
+        case .speaking:
             return NSImage(named: NSImage.Name(rawValue: "statusIconTalk"))!
         }
     }
-    
+
     func title() -> String {
         switch self {
-        case .Muted:
+        case .muted:
             return "Disable"
-        case .Speaking:
+        case .speaking:
             return "Enable"
         }
     }
 }
-
