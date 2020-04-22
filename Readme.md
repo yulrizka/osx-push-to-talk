@@ -1,10 +1,10 @@
 # OSX PushToTalk
 
-It's an application on try icon that unmute microphone on a keypress
+OSX PushToTalk mutes and unmutes the microphone via keypress.
 
-When the Application strat, it will add a status icon. Hold **Right options** key to talk, and release to mute
+When the Application starts, it will add a status icon. Hold the **Right option** key to talk, and release to mute
 
-The icon indicator will be translucent if microphone is muted.
+The icon indicator will be translucent if the microphone is muted.
 
 Application Installer (dmg) can be downloaded in the [Release](https://github.com/yulrizka/osx-push-to-talk/releases) Section
 
