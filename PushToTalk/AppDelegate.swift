@@ -40,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 NSLog("Can't get access to the mic.")
                 exit(1)
             default:
-                return
+                print("Already has permission");
         }
 
         
