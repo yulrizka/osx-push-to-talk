@@ -154,24 +154,6 @@ extension Microphone {
 
         return inputDevices
     }
-
-    
-//    internal func getDefaultInputDevice(_ defaultOutputDeviceID:inout UInt32)  {
-//        var defaultOutputDeviceIDSize = UInt32(MemoryLayout.size(ofValue: defaultOutputDeviceID))
-//
-//        var getDefaultInputDevicePropertyAddress = AudioObjectPropertyAddress(
-//            mSelector: AudioObjectPropertySelector(kAudioHardwarePropertyDefaultInputDevice),
-//            mScope: AudioObjectPropertyScope(kAudioObjectPropertyScopeGlobal),
-//            mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
-//
-//        AudioObjectGetPropertyData(
-//            AudioObjectID(kAudioObjectSystemObject),
-//            &getDefaultInputDevicePropertyAddress,
-//            0,
-//            nil,
-//            &defaultOutputDeviceIDSize,
-//            &defaultOutputDeviceID)
-//    }
     
     internal func setMuted(_ muted:Bool) {
         
