@@ -50,12 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.statusItem.image = status.image()
         }
         self.microphone.status = .Muted
-        do {
-            try self.microphone.setupDeviceMenu(menu: deviceMenu)
-        } catch {
-            print("Unexpected Error: \(error).")
-            exit(1)
-        }
+        self.refreshDevices(nil);
     }
     
     
@@ -67,6 +62,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func menuItemQuitAction(_ sender: NSMenuItem) {
         self.microphone.status = .Speaking
         exit(0)
+    }
+    
+    @IBAction func refreshDevices(_ sender: NSMenuItem?) {
+        do {
+            try self.microphone.setupDeviceMenu(menu: deviceMenu)
+        } catch {
+            print("Unexpected Error: \(error).")
+            exit(1)
+        }
     }
 }
 

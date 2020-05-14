@@ -19,6 +19,7 @@ class Microphone {
     typealias StatusUpdate = (MicrophoneStatus) -> ()
     var statusUpdated: StatusUpdate?
     var selectedInput: InputDevice?
+    var enabled = true
     
     /* Public method to set status of the microphone
      * 
@@ -44,7 +45,13 @@ class Microphone {
     }
     
     func toggle() {
-        self.status = (self.status == .Muted) ? .Speaking : .Muted
+        if (self.enabled == true) {
+            self.status = .Speaking
+            self.enabled = false
+        } else {
+            self.status = .Muted
+            self.enabled = true
+        }
     }
     
     func setupDeviceMenu(menu: NSMenu) throws {
@@ -179,6 +186,7 @@ extension Microphone {
 extension Microphone {
     internal func handleFlagChangedEvent(_ theEvent: NSEvent!) { 
         guard theEvent.keyCode == 61 else { return }
+        guard self.enabled else { return }
         self.status = (theEvent.modifierFlags.contains(NSEvent.ModifierFlags.option)) ? .Speaking : .Muted
     }
 }

@@ -39,6 +39,12 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="Refresh Devices" id="5cy-zE-Do5">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="refreshDevices:" target="Voe-Tx-rLC" id="uMT-3e-8AH"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="q9I-gh-tmZ"/>
                 <menuItem title="Quit PushToTalk" id="Jr2-PO-rsf">
                     <modifierMask key="keyEquivalentModifierMask"/>
