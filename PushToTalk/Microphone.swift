@@ -19,7 +19,7 @@ class Microphone {
     typealias StatusUpdate = (MicrophoneStatus) -> ()
     var statusUpdated: StatusUpdate?
     var selectedInput: InputDevice?
-    var enabled = true
+    
     
     /* Public method to set status of the microphone
      * 
@@ -30,27 +30,6 @@ class Microphone {
         didSet {
             self.setMuted(status == .Muted)
             self.statusUpdated?(status)
-        }
-    }
-    
-    init() {
-        // handle when application is on background
-        NSEvent.addGlobalMonitorForEvents(matching: NSEvent.EventTypeMask.flagsChanged, handler: self.handleFlagChangedEvent)
-        
-        // handle when application is on foreground
-        NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.flagsChanged, handler: { (theEvent) -> NSEvent? in
-            self.handleFlagChangedEvent(theEvent)
-            return theEvent
-        })
-    }
-    
-    func toggle() {
-        if (self.enabled == true) {
-            self.status = .Speaking
-            self.enabled = false
-        } else {
-            self.status = .Muted
-            self.enabled = true
         }
     }
     
@@ -182,11 +161,3 @@ extension Microphone {
     }
 }
 
-// MARK - Event Handling
-extension Microphone {
-    internal func handleFlagChangedEvent(_ theEvent: NSEvent!) { 
-        guard theEvent.keyCode == 61 else { return }
-        guard self.enabled else { return }
-        self.status = (theEvent.modifierFlags.contains(NSEvent.ModifierFlags.option)) ? .Speaking : .Muted
-    }
-}

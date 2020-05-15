@@ -18,12 +18,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var menuItemToggle: NSMenuItem!
     @IBOutlet weak var deviceMenu: NSMenu!
+    @IBOutlet weak var hotkeyMenuItem: NSMenuItem!
     
-    let microphone = Microphone()
+    var microphone = Microphone()
+    var hotkey: HotKey?
     
     let statusItem = NSStatusBar.system.statusItem(withLength: -1)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+        self.hotkey = HotKey(microphone: microphone, menuItem: hotkeyMenuItem)
         
         switch AVCaptureDevice.authorizationStatus(for: .audio) {
             case .notDetermined: // The user has not yet been asked for camera access.
@@ -43,7 +47,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 print("Already has permission");
         }
 
-        
         statusItem.menu = statusMenu
         self.microphone.statusUpdated = { (status) in
             self.menuItemToggle.title = status.title()
@@ -56,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: Menu item Actions
     @IBAction func toggleAction(_ sender: NSMenuItem) {
-        self.microphone.toggle()
+        self.hotkey!.toggle()
     }
     
     @IBAction func menuItemQuitAction(_ sender: NSMenuItem) {
@@ -71,6 +74,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             print("Unexpected Error: \(error).")
             exit(1)
         }
+    }
+    
+    @IBAction func recordNewHotKey(_ sender: NSMenuItem) {
+        self.hotkey!.recordNewHotKey()
     }
 }
 

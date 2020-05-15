@@ -15,6 +15,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PushToTalk" customModuleProvider="target">
             <connections>
                 <outlet property="deviceMenu" destination="cIr-2Z-Q9T" id="Txm-Mx-Pwh"/>
+                <outlet property="hotkeyMenuItem" destination="pek-tM-0VZ" id="kKw-cA-JcJ"/>
                 <outlet property="menuItemToggle" destination="sNZ-PQ-gSa" id="TEK-EG-cI1"/>
                 <outlet property="statusMenu" destination="kOR-ND-mj9" id="bja-aU-gXo"/>
             </connections>
@@ -43,6 +44,12 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="refreshDevices:" target="Voe-Tx-rLC" id="uMT-3e-8AH"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="HotKey" id="pek-tM-0VZ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="recordNewHotKey:" target="Voe-Tx-rLC" id="Fn5-YG-WHQ"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="q9I-gh-tmZ"/>
