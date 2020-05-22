@@ -11,6 +11,7 @@
 		0ED8478C1AB89E2D00710ABA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8478B1AB89E2D00710ABA /* Images.xcassets */; };
 		0ED8478F1AB89E2D00710ABA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8478D1AB89E2D00710ABA /* MainMenu.xib */; };
 		0ED8479B1AB89E2E00710ABA /* PushToTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8479A1AB89E2E00710ABA /* PushToTalkTests.swift */; };
+		3FE6EFDC246DBE73000F966A /* HotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6EFDB246DBE73000F966A /* HotKey.swift */; };
 		BA7BED191DF5ECA9004DA990 /* MicrophoneStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BED181DF5ECA9004DA990 /* MicrophoneStatus.swift */; };
 		BA7BED1B1DF5EE9E004DA990 /* Microphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BED1A1DF5EE9E004DA990 /* Microphone.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		0ED847941AB89E2E00710ABA /* PushToTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushToTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED847991AB89E2E00710ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ED8479A1AB89E2E00710ABA /* PushToTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushToTalkTests.swift; sourceTree = "<group>"; };
+		3FE6EFDB246DBE73000F966A /* HotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKey.swift; sourceTree = "<group>"; };
 		BA7BED181DF5ECA9004DA990 /* MicrophoneStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneStatus.swift; sourceTree = "<group>"; };
 		BA7BED1A1DF5EE9E004DA990 /* Microphone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Microphone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				0ED847891AB89E2D00710ABA /* AppDelegate.swift */,
 				BA7BED1A1DF5EE9E004DA990 /* Microphone.swift */,
 				BA7BED181DF5ECA9004DA990 /* MicrophoneStatus.swift */,
+				3FE6EFDB246DBE73000F966A /* HotKey.swift */,
 				0ED8478B1AB89E2D00710ABA /* Images.xcassets */,
 				0ED8478D1AB89E2D00710ABA /* MainMenu.xib */,
 				0ED847871AB89E2D00710ABA /* Supporting Files */,
@@ -175,6 +178,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -216,6 +220,7 @@
 				0ED8478A1AB89E2D00710ABA /* AppDelegate.swift in Sources */,
 				BA7BED191DF5ECA9004DA990 /* MicrophoneStatus.swift in Sources */,
 				BA7BED1B1DF5EE9E004DA990 /* Microphone.swift in Sources */,
+				3FE6EFDC246DBE73000F966A /* HotKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +358,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = PushToTalk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yulrizka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -367,6 +373,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = PushToTalk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yulrizka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
