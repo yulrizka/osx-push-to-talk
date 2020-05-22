@@ -22,9 +22,9 @@ extension MicrophoneStatus: AssociatedImage {
     func image() -> NSImage {
         switch self {
         case .Muted:
-            return NSImage(named: NSImage.Name(rawValue: "statusIconMute"))!
+            return NSImage(named: "statusIconMute")!
         case .Speaking:
-            return NSImage(named: NSImage.Name(rawValue: "statusIconTalk"))!
+            return NSImage(named: "statusIconTalk")!
         }
     }
     

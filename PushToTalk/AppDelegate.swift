@@ -50,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = statusMenu
         self.microphone.statusUpdated = { (status) in
             self.menuItemToggle.title = status.title()
-            self.statusItem.image = status.image()
+            self.statusItem.button?.image = status.image()
         }
         self.microphone.status = .Muted
         self.refreshDevices(nil);

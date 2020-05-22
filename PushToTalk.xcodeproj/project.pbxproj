@@ -164,11 +164,11 @@
 				TargetAttributes = {
 					0ED847831AB89E2D00710ABA = {
 						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1130;
 					};
 					0ED847931AB89E2E00710ABA = {
 						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1130;
 						TestTargetID = 0ED847831AB89E2D00710ABA;
 					};
 				};
@@ -362,7 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yulrizka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -377,7 +377,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yulrizka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -399,7 +399,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yulrizka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushToTalk.app/Contents/MacOS/PushToTalk";
 			};
 			name = Debug;
@@ -418,7 +418,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yulrizka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushToTalk.app/Contents/MacOS/PushToTalk";
 			};
 			name = Release;
