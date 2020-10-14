@@ -10,6 +10,8 @@ import Foundation
 import AppKit
 
 class HotKey {
+    var doubletap = false
+    var previousEpoc = NSDate().timeIntervalSince1970
     
     var enabled = true
     let microphone: Microphone
@@ -47,6 +49,13 @@ class HotKey {
         recordingHotKey = true;
     }
     
+    func checkForDoubleTap() {
+        let timeInterval = NSDate().timeIntervalSince1970
+        let timediff = timeInterval - self.previousEpoc
+        self.previousEpoc = timeInterval
+        self.doubletap = timediff < 0.2
+    }
+    
     internal func handleFlagChangedEvent(_ theEvent: NSEvent!) {
         if self.recordingHotKey {
             self.recordingHotKey = false
@@ -57,6 +66,15 @@ class HotKey {
         }
         guard theEvent.keyCode == self.keyCode else { return }
         guard self.enabled else { return }
-        microphone.status = (theEvent.modifierFlags.contains(self.modifierFlags)) ? .Speaking : .Muted
+        
+        if theEvent.modifierFlags.contains(self.modifierFlags) {
+            checkForDoubleTap()
+            microphone.status = .Speaking
+        } else {
+            if (!self.doubletap) {
+                microphone.status = .Muted
+                doubletap = false
+            }
+        }
     }
 }
