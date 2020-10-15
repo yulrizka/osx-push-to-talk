@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/yulrizka/osx-push-to-talk/compare/v0.1.2...v0.1.3) (2020-10-15)
+
+
+### Features
+
+* adding double tap hotkey detection to hold mic open ([#20](https://github.com/yulrizka/osx-push-to-talk/issues/20)) ([f0956bb](https://github.com/yulrizka/osx-push-to-talk/commit/f0956bb09dacff42a354ad440e5ba2119f0864e4))
+
 ### 0.1.2 (2020-05-22)
 
 
