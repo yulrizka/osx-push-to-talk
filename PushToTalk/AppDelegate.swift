@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var microphone = Microphone()
     var hotkey: HotKey?
     
-    let statusItem = NSStatusBar.system.statusItem(withLength: -1)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
