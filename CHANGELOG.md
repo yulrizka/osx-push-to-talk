@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/yulrizka/osx-push-to-talk/compare/v0.1.3...v0.1.4) (2020-10-16)
+
+
+### Features
+
+* update status image and support dark mode ([#21](https://github.com/yulrizka/osx-push-to-talk/issues/21)) ([044d33f](https://github.com/yulrizka/osx-push-to-talk/commit/044d33f8fa45dd1e4ebb84f19966fb95a388c8d8))
+
 ### [0.1.3](https://github.com/yulrizka/osx-push-to-talk/compare/v0.1.2...v0.1.3) (2020-10-15)
 
 
