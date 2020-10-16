@@ -44,3 +44,7 @@ If you want to be sure, just compile the project, Archive & export PushToTalk.ap
 ### Uninstall
 
 Delete `PushToTalk.app` in `Applications` directory
+
+## Acknowledgement
+
+Status Icon by [jeff](https://thenounproject.com/jeff955/) (CC)
