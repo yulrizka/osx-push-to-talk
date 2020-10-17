@@ -2,7 +2,7 @@
 
 OSX PushToTalk mutes and unmutes the microphone via a keypress.
 
-![usage animation](osx-push-to-talk.gif)
+![usage animation](https://user-images.githubusercontent.com/117752/96354725-0eabff00-10da-11eb-9539-6e159e7d588b.gif)
 
 Features:
 
