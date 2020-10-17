@@ -62,5 +62,5 @@ Delete `PushToTalk.app` in `Applications` directory
 
 ## Acknowledgement
 
-Status Icon by [jeff](https://thenounproject.com/jeff955/) (CC)
-Keyboard Caps by [Arthur Shlain](https://thenounproject.com/ArtZ91/) (CC)
+- Status Icon by [jeff](https://thenounproject.com/jeff955/) (CC)
+- Keyboard Caps by [Arthur Shlain](https://thenounproject.com/ArtZ91/) (CC)
