@@ -42,7 +42,8 @@ class HotKey {
 
 
         self.menuItem = menuItem
-        self.menuItem.title = "Change HotKey (\(keyCode))"
+        let keyString = KeyCodeHelper.KeyChars(keyCode: self.keyCode)
+        self.menuItem.title = "Change HotKey (\(keyString))"
 
         self.microphone = microphone
         // handle when application is on background
@@ -67,6 +68,7 @@ class HotKey {
 
     func recordNewHotKey() {
         recordingHotKey = true;
+        microphone.status = MicrophoneStatus.HotKeySet
     }
 
     func checkForDoubleTap() {
@@ -81,7 +83,9 @@ class HotKey {
             self.recordingHotKey = false
             self.keyCode = theEvent.keyCode
             self.modifierFlags = theEvent.modifierFlags
-            self.menuItem.title = "Change HotKey (\(keyCode) (\(modifierFlags)"
+            let keyString = KeyCodeHelper.KeyChars(keyCode: theEvent.keyCode)
+            self.menuItem.title = "Change HotKey (\(keyString))"
+
             UserDefaults.standard.set(self.keyCode, forKey: prefKeyCode)
             UserDefaults.standard.set(self.modifierFlags.rawValue, forKey: prefModifiers)
             return;
