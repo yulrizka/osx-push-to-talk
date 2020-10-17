@@ -19,13 +19,6 @@ The icon indicator will be red if the microphone *not* muted
 
 ```
 $ brew install yulrizka/tap/pushtotal
-...
-==> Caveats
-The application was only built in "/usr/local/opt/pushtotalk/PushToTalk.app"
-
-To make it available in the Application folder, create a symlink with:
-
-    ln -s "/usr/local/opt/pushtotalk/PushToTalk.app" "/Applications/PushToTalk.app"
 ```
 
 or 
@@ -34,6 +27,18 @@ or
 $ brew tap yulrizka/tap # to update the tap repo
 $ brew install pushtotalk
 ```
+
+Read the Caveats
+```
+==> Caveats
+The application was only built in "/usr/local/opt/pushtotalk/PushToTalk.app"
+
+To make it available in the Application folder, create a symlink with:
+
+    ln -s "/usr/local/opt/pushtotalk/PushToTalk.app" "/Applications/PushToTalk.app"
+```
+
+
 
 ### Build from source
 ```
