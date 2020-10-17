@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/yulrizka/osx-push-to-talk/compare/v0.1.4...v0.1.5) (2020-10-17)
+
+
+### Features
+
+* HotKey as text, add image status HotKeySet ([#24](https://github.com/yulrizka/osx-push-to-talk/issues/24)) ([d75713f](https://github.com/yulrizka/osx-push-to-talk/commit/d75713fefb217a2ffeb454cebf98825375ccd17f))
+* persist hotkey ([#23](https://github.com/yulrizka/osx-push-to-talk/issues/23)) ([585e2da](https://github.com/yulrizka/osx-push-to-talk/commit/585e2da145035e25f5a670d05fa43eb022078021))
+
 ### [0.1.4](https://github.com/yulrizka/osx-push-to-talk/compare/v0.1.3...v0.1.4) (2020-10-16)
 
 
