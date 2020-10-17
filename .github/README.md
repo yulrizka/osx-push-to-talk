@@ -19,7 +19,7 @@ The icon indicator will become ![red mic](../PushToTalk/Images.xcassets/statusIc
 ### HomeBrew
 
 ```
-$ brew install yulrizka/tap/pushtotal
+$ brew install yulrizka/tap/pushtotalk
 ```
 
 or 
