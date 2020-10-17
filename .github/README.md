@@ -7,11 +7,12 @@ OSX PushToTalk mutes and unmutes the microphone via a keypress.
 Features:
 
 - Hold a hotkey (default to **Right option**) to unmute and release to mute
-- Configurable hotkey ([@jeremyellison](https://github.com/yulrizka/osx-push-to-talk/commits?author=jeremyellison))
-- Configurable device ([@jeremyellison](https://github.com/yulrizka/osx-push-to-talk/commits?author=jeremyellison))
+- Double tap the hotkey to disable the app. It will unmute until the hotkey is pressed again
+- Configurable hotkey
+- Configurable device
 - Tested with Mojave & Catalina
 
-The icon indicator will be red if the microphone *not* muted
+The icon indicator will become ![red mic](../PushToTalk/Images.xcassets/statusIconTalk.imageset/talk1x.png) if the microphone is live (**NOT** muted).
 
 ## Installation
 
