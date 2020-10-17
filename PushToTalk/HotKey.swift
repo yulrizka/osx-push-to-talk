@@ -32,16 +32,14 @@ class HotKey {
         self.modifierFlags = defaultModifierFlags
 
         // load key from preference
-        self.keyCode = UInt16(UserDefaults.standard.integer(forKey: prefKeyCode))
-        if self.keyCode == 0 {
-            self.keyCode = defaultKeyCode
+        if UserDefaults.standard.object(forKey: prefKeyCode) != nil {
+            self.keyCode = UInt16(UserDefaults.standard.integer(forKey: prefKeyCode))
         }
-
         if UserDefaults.standard.object(forKey: prefModifiers) != nil {
             let modifierFlags:UInt = UInt(UserDefaults.standard.integer(forKey: prefModifiers))
             self.modifierFlags = NSEvent.ModifierFlags(rawValue: modifierFlags)
         }
-        print("loaded keycode \(self.keyCode) \(self.modifierFlags)")
+
 
         self.menuItem = menuItem
         self.menuItem.title = "Change HotKey (\(keyCode))"
