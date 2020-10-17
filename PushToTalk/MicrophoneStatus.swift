@@ -16,6 +16,7 @@ protocol AssociatedImage {
 enum MicrophoneStatus {
     case Muted
     case Speaking
+    case HotKeySet
 }
 
 extension MicrophoneStatus: AssociatedImage {
@@ -25,6 +26,8 @@ extension MicrophoneStatus: AssociatedImage {
             return NSImage(named: "statusIconMute")!
         case .Speaking:
             return NSImage(named: "statusIconTalk")!
+        case .HotKeySet:
+            return NSImage(named: "statusIconHotKeySet")!
         }
     }
     
@@ -34,6 +37,8 @@ extension MicrophoneStatus: AssociatedImage {
             return "Disable"
         case .Speaking:
             return "Enable"
+        case .HotKeySet:
+            return "Set HotKey"
         }
     }
 }
