@@ -11,18 +11,31 @@ Features:
 - Configurable device ([@jeremyellison](https://github.com/yulrizka/osx-push-to-talk/commits?author=jeremyellison))
 - Tested with Mojave & Catalina
 
-The icon indicator will be translucent if the microphone is muted.
+The icon indicator will be red if the microphone *not* muted
 
-Application Installer (dmg) can be downloaded in the [Release](https://github.com/yulrizka/osx-push-to-talk/releases) Section
+## Installation
 
-## Troubleshooting
+### HomeBrew
 
-### Support for Catalina
+```
+$ brew install yulrizka/tap/pushtotal
+...
+==> Caveats
+The application was only built in "/usr/local/opt/pushtotalk/PushToTalk.app"
 
-Catalina does not allow application from unsigned developer. The next section will only work for OSX before catalina.
+To make it available in the Application folder, create a symlink with:
 
-To run this on Catalina, build the application yourself
+    ln -s "/usr/local/opt/pushtotalk/PushToTalk.app" "/Applications/PushToTalk.app"
+```
 
+or 
+
+```
+$ brew tap yulrizka/tap # to update the tap repo
+$ brew install pushtotalk
+```
+
+### Build from source
 ```
 $ git clone git@github.com:yulrizka/osx-push-to-talk.git
 $ cd osx-push-to-talk
@@ -31,6 +44,8 @@ $ xcodebuild -target "PushToTalk" -configuration Release
 
 This requires you to have `Xcode` installed. Once The building process is finished, you will have the application in `build/Release/` folder.
 Move the `PushToTalk.app` to `Applications` directory.
+
+## Troubleshooting
 
 ### The app is from an unidentified developer
 
@@ -48,3 +63,4 @@ Delete `PushToTalk.app` in `Applications` directory
 ## Acknowledgement
 
 Status Icon by [jeff](https://thenounproject.com/jeff955/) (CC)
+Keyboard Caps by [Arthur Shlain](https://thenounproject.com/ArtZ91/) (CC)
