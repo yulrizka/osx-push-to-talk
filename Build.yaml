@@ -18,8 +18,10 @@ jobs:
           -configuration 'Release'
           'SYMROOT=build'
           
-      - run: zip PushToTalk.app.zip build/Release/PushToTalk.app 
+      - run: |
+          cd build/Release/
+          zip PushToTalk.app.zip PushToTalk.app 
       - uses: actions/upload-artifact@v2
         with:
           name: PushToTalk.app.zip
-          path: PushToTalk.app.zip
+          path: build/Release/PushToTalk.app.zip
