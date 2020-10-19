@@ -1,12 +1,12 @@
 # OSX PushToTalk
 
-OSX PushToTalk mutes and unmutes the microphone via a keypress.
+OSX PushToTalk mutes and unmutes the microphone via a keypress. This globally works for multiple video conference solutions (Google meet, Zoom, Skype, etc).
 
 ![usage animation](https://user-images.githubusercontent.com/117752/96354725-0eabff00-10da-11eb-9539-6e159e7d588b.gif)
 
 Features:
 
-- Hold a hotkey (default to **Right option**) to unmute and release to mute
+- Hold a hotkey (default to **Right-⌥**) to unmute and release to mute
 - Double tap the hotkey to disable the app. It will unmute until the hotkey is pressed again
 - Configurable hotkey
 - Configurable device
