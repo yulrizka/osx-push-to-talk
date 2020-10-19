@@ -1,0 +1,28 @@
+name: Build
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+
+  build:
+    runs-on: [macos-latest]
+    steps:
+      - uses: actions/checkout@v2
+            
+      - run: >
+          xcodebuild -project 'PushToTalk.xcodeproj' 
+          'CODE_SIGN_IDENTITY=-'
+          -configuration 'Release'
+          'SYMROOT=build'
+          
+      - run: |
+          cd build/Release/
+          zip -r PushToTalk.app.zip PushToTalk.app 
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: PushToTalk.app
+          path: build/Release/PushToTalk.app.zip
