@@ -20,8 +20,8 @@ jobs:
           
       - run: |
           cd build/Release/
-          zip PushToTalk.app.zip PushToTalk.app 
+          zip -r PushToTalk.app.zip PushToTalk.app 
       - uses: actions/upload-artifact@v2
         with:
-          name: PushToTalk.app.zip
+          name: PushToTalk.app
           path: build/Release/PushToTalk.app.zip
