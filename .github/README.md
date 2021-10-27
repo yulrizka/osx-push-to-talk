@@ -16,6 +16,8 @@ The icon indicator will become ![red mic](../PushToTalk/Images.xcassets/statusIc
 
 ## Installation
 
+If you run into issues when installing, ensure you have opened XCode at least once and installed the "additional required components."
+
 ### HomeBrew
 
 ```
