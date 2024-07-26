@@ -71,13 +71,6 @@ class HotKey {
         microphone.status = MicrophoneStatus.HotKeySet
     }
 
-    func checkForDoubleTap() {
-        let timeInterval = NSDate().timeIntervalSince1970
-        let timediff = timeInterval - self.previousEpoc
-        self.previousEpoc = timeInterval
-        self.doubletap = timediff < 0.2
-    }
-
     internal func handleFlagChangedEvent(_ theEvent: NSEvent!) {
         if self.recordingHotKey {
             self.recordingHotKey = false
@@ -94,12 +87,18 @@ class HotKey {
         guard self.enabled else { return }
 
         if theEvent.modifierFlags.contains(self.modifierFlags) {
-            checkForDoubleTap()
+            if microphone.status != .Speaking {
+                let timeInterval = NSDate().timeIntervalSince1970
+                self.previousEpoc = timeInterval
+            }
+
             microphone.status = .Speaking
         } else {
-            if (!self.doubletap) {
+            let timeInterval = NSDate().timeIntervalSince1970
+            let timediff = timeInterval - self.previousEpoc
+            // Only mute on keyup when we pressed long enough so short tap is toggling the state
+            if timediff > 0.2 {
                 microphone.status = .Muted
-                doubletap = false
             }
         }
     }
