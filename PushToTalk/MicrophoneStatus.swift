@@ -17,6 +17,7 @@ enum MicrophoneStatus {
     case Muted
     case Speaking
     case HotKeySet
+    case ExternalControl
 }
 
 extension MicrophoneStatus: AssociatedImage {
@@ -28,6 +29,8 @@ extension MicrophoneStatus: AssociatedImage {
             return NSImage(named: "statusIconTalk")!
         case .HotKeySet:
             return NSImage(named: "statusIconHotKeySet")!
+        case .ExternalControl:
+            return NSImage(named: "statusIconTalk")!
         }
     }
     
@@ -39,6 +42,8 @@ extension MicrophoneStatus: AssociatedImage {
             return "Enable"
         case .HotKeySet:
             return "Set HotKey"
+        case .ExternalControl:
+            return "In Use (External App)"
         }
     }
 }

@@ -3,18 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00093D3575B3B79F0D037FCD /* TerminalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3658C345AB7CACBBB26F06 /* TerminalType.swift */; };
+		02AF96E0E3932BB0784895CD /* AudioObject+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA468C0075415513437B8A93 /* AudioObject+Helpers.swift */; };
+		09911EE3B28C86570DD24582 /* AudioDeviceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B75E2E783D31E834714E5 /* AudioDeviceEvent.swift */; };
 		0ED8478A1AB89E2D00710ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED847891AB89E2D00710ABA /* AppDelegate.swift */; };
 		0ED8478C1AB89E2D00710ABA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8478B1AB89E2D00710ABA /* Images.xcassets */; };
 		0ED8478F1AB89E2D00710ABA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8478D1AB89E2D00710ABA /* MainMenu.xib */; };
 		0ED8479B1AB89E2E00710ABA /* PushToTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8479A1AB89E2E00710ABA /* PushToTalkTests.swift */; };
+		1C2D553961992411958A2EEF /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AACB696CF1C63DA3F076BD /* TransportType.swift */; };
+		260C92CD0814C136E6E5B83F /* VolumeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D604379B97BD9A6DA20BE /* VolumeInfo.swift */; };
+		2EBBDD9F1EBED472B60C6BC0 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE09EFA0BB0E21AA01C3D3B /* Direction.swift */; };
 		31039BA3253B7EE7001DE070 /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31039BA2253B7EE7001DE070 /* KeyCode.swift */; };
+		3DC4BF907FF50D1AB841774C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE0A3C24406A6470C8C701A /* Event.swift */; };
 		3FE6EFDC246DBE73000F966A /* HotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6EFDB246DBE73000F966A /* HotKey.swift */; };
+		4AD6DE280868E21A9697587E /* EventSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0984FF4B5E815CF7B2685F /* EventSubscriber.swift */; };
+		4D5BB6DAC85374A60233231F /* AudioObjectPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483708B93E4FD3155029877 /* AudioObjectPool.swift */; };
+		51B5B6A3EE11384211F169A4 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492D63B009449701B8A389E4 /* NotificationCenter.swift */; };
+		546CF2B7BA59377C1B72CF19 /* AudioHardwareEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD5460DF0E9A6B85696087 /* AudioHardwareEvent.swift */; };
+		76A9A2B9712B0D55687802AC /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C66BDE179398F94ADA41666 /* AudioStream.swift */; };
+		7AABFBF1F2FBD72A3004048D /* AudioStreamEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B2C9E8E8394CFF9451683 /* AudioStreamEvent.swift */; };
+		8C6F463113FD1CF9D8AB414E /* AudioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74D91D111FAB7E2B7E3A46F /* AudioObject.swift */; };
+		947A71E4D5B668561BBDB4D5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E03D2F3042072CBF5291F3 /* Utils.swift */; };
+		BA72E89B27C3CCD2F945E923 /* MicrophoneMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45588CC9E560F6A03993E2BF /* MicrophoneMonitor.swift */; };
 		BA7BED191DF5ECA9004DA990 /* MicrophoneStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BED181DF5ECA9004DA990 /* MicrophoneStatus.swift */; };
 		BA7BED1B1DF5EE9E004DA990 /* Microphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BED1A1DF5EE9E004DA990 /* Microphone.swift */; };
+		BE456DDA3C2B2BE2AEB046B0 /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11CD8A0095DFB06D68A5DF5 /* AudioDevice.swift */; };
+		DC27165D7FBF62A4A351506A /* AudioHardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372AD22EBD75310CCD97E3 /* AudioHardware.swift */; };
+		E09B7FC97E1532A13DCFC6C9 /* BundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF6EA9F08C65C76A2CD93E /* BundleInfo.swift */; };
+		EDE9E8ED96C43CED0B928357 /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D06D8C0E9FECFD7F18872F /* Bool+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +56,30 @@
 		0ED847941AB89E2E00710ABA /* PushToTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushToTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED847991AB89E2E00710ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ED8479A1AB89E2E00710ABA /* PushToTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushToTalkTests.swift; sourceTree = "<group>"; };
+		0EE09EFA0BB0E21AA01C3D3B /* Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Direction.swift; path = AMCoreAudio/Public/Enums/Direction.swift; sourceTree = "<group>"; };
+		22AACB696CF1C63DA3F076BD /* TransportType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = AMCoreAudio/Public/Enums/TransportType.swift; sourceTree = "<group>"; };
+		2C66BDE179398F94ADA41666 /* AudioStream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioStream.swift; path = AMCoreAudio/Public/AudioStream.swift; sourceTree = "<group>"; };
 		31039BA2253B7EE7001DE070 /* KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
 		3FE6EFDB246DBE73000F966A /* HotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKey.swift; sourceTree = "<group>"; };
+		45588CC9E560F6A03993E2BF /* MicrophoneMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MicrophoneMonitor.swift; sourceTree = "<group>"; };
+		492D63B009449701B8A389E4 /* NotificationCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationCenter.swift; path = AMCoreAudio/Public/NotificationCenter.swift; sourceTree = "<group>"; };
+		4C3658C345AB7CACBBB26F06 /* TerminalType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TerminalType.swift; path = AMCoreAudio/Public/Enums/TerminalType.swift; sourceTree = "<group>"; };
+		58D06D8C0E9FECFD7F18872F /* Bool+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bool+Extensions.swift"; path = "AMCoreAudio/Internal/Extensions/Bool+Extensions.swift"; sourceTree = "<group>"; };
+		63E03D2F3042072CBF5291F3 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = AMCoreAudio/Internal/Utils.swift; sourceTree = "<group>"; };
+		7ABD5460DF0E9A6B85696087 /* AudioHardwareEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioHardwareEvent.swift; path = AMCoreAudio/Public/Enums/AudioHardwareEvent.swift; sourceTree = "<group>"; };
+		887B2C9E8E8394CFF9451683 /* AudioStreamEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioStreamEvent.swift; path = AMCoreAudio/Public/Enums/AudioStreamEvent.swift; sourceTree = "<group>"; };
+		8C8D604379B97BD9A6DA20BE /* VolumeInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VolumeInfo.swift; path = AMCoreAudio/Public/Models/VolumeInfo.swift; sourceTree = "<group>"; };
+		9483708B93E4FD3155029877 /* AudioObjectPool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioObjectPool.swift; path = AMCoreAudio/Internal/AudioObjectPool.swift; sourceTree = "<group>"; };
+		A98B75E2E783D31E834714E5 /* AudioDeviceEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioDeviceEvent.swift; path = AMCoreAudio/Public/Enums/AudioDeviceEvent.swift; sourceTree = "<group>"; };
+		AA468C0075415513437B8A93 /* AudioObject+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AudioObject+Helpers.swift"; path = "AMCoreAudio/Internal/Extensions/AudioObject+Helpers.swift"; sourceTree = "<group>"; };
+		AAE0A3C24406A6470C8C701A /* Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Event.swift; path = AMCoreAudio/Public/Protocols/Event.swift; sourceTree = "<group>"; };
+		B74D91D111FAB7E2B7E3A46F /* AudioObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioObject.swift; path = AMCoreAudio/Public/AudioObject.swift; sourceTree = "<group>"; };
 		BA7BED181DF5ECA9004DA990 /* MicrophoneStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneStatus.swift; sourceTree = "<group>"; };
 		BA7BED1A1DF5EE9E004DA990 /* Microphone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Microphone.swift; sourceTree = "<group>"; };
+		C11CD8A0095DFB06D68A5DF5 /* AudioDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioDevice.swift; path = AMCoreAudio/Public/AudioDevice.swift; sourceTree = "<group>"; };
+		DD372AD22EBD75310CCD97E3 /* AudioHardware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioHardware.swift; path = AMCoreAudio/Public/AudioHardware.swift; sourceTree = "<group>"; };
+		DE0984FF4B5E815CF7B2685F /* EventSubscriber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventSubscriber.swift; path = AMCoreAudio/Public/Protocols/EventSubscriber.swift; sourceTree = "<group>"; };
+		E3FF6EA9F08C65C76A2CD93E /* BundleInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleInfo.swift; path = AMCoreAudio/Public/BundleInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +129,8 @@
 				0ED8478B1AB89E2D00710ABA /* Images.xcassets */,
 				0ED8478D1AB89E2D00710ABA /* MainMenu.xib */,
 				0ED847871AB89E2D00710ABA /* Supporting Files */,
+				4807BAD001D3DB5D6BED0B01 /* AMCoreAudio */,
+				45588CC9E560F6A03993E2BF /* MicrophoneMonitor.swift */,
 			);
 			path = PushToTalk;
 			sourceTree = "<group>";
@@ -116,6 +158,80 @@
 				0ED847991AB89E2E00710ABA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C6E87310D84D63CAFBF2402 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A98B75E2E783D31E834714E5 /* AudioDeviceEvent.swift */,
+				7ABD5460DF0E9A6B85696087 /* AudioHardwareEvent.swift */,
+				887B2C9E8E8394CFF9451683 /* AudioStreamEvent.swift */,
+				0EE09EFA0BB0E21AA01C3D3B /* Direction.swift */,
+				4C3658C345AB7CACBBB26F06 /* TerminalType.swift */,
+				22AACB696CF1C63DA3F076BD /* TransportType.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		4807BAD001D3DB5D6BED0B01 /* AMCoreAudio */ = {
+			isa = PBXGroup;
+			children = (
+				8AC87ED616A414979AB04BF2 /* Internal */,
+				66187F2DD296D9A2AEFB86BD /* Public */,
+			);
+			name = AMCoreAudio;
+			sourceTree = "<group>";
+		};
+		4D80B79F36BF330409AD0D90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8C8D604379B97BD9A6DA20BE /* VolumeInfo.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		66187F2DD296D9A2AEFB86BD /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				1C6E87310D84D63CAFBF2402 /* Enums */,
+				4D80B79F36BF330409AD0D90 /* Models */,
+				A0B6E52EFD64CBA560C478FD /* Protocols */,
+				C11CD8A0095DFB06D68A5DF5 /* AudioDevice.swift */,
+				DD372AD22EBD75310CCD97E3 /* AudioHardware.swift */,
+				B74D91D111FAB7E2B7E3A46F /* AudioObject.swift */,
+				2C66BDE179398F94ADA41666 /* AudioStream.swift */,
+				E3FF6EA9F08C65C76A2CD93E /* BundleInfo.swift */,
+				492D63B009449701B8A389E4 /* NotificationCenter.swift */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		8AC87ED616A414979AB04BF2 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				B36CB16CAE2BC6EF83F9C830 /* Extensions */,
+				9483708B93E4FD3155029877 /* AudioObjectPool.swift */,
+				63E03D2F3042072CBF5291F3 /* Utils.swift */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+		A0B6E52EFD64CBA560C478FD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AAE0A3C24406A6470C8C701A /* Event.swift */,
+				DE0984FF4B5E815CF7B2685F /* EventSubscriber.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		B36CB16CAE2BC6EF83F9C830 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA468C0075415513437B8A93 /* AudioObject+Helpers.swift */,
+				58D06D8C0E9FECFD7F18872F /* Bool+Extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +278,8 @@
 		0ED8477C1AB89E2D00710ABA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1610;
 				ORGANIZATIONNAME = yulrizka;
 				TargetAttributes = {
 					0ED847831AB89E2D00710ABA = {
@@ -225,6 +342,26 @@
 				BA7BED191DF5ECA9004DA990 /* MicrophoneStatus.swift in Sources */,
 				BA7BED1B1DF5EE9E004DA990 /* Microphone.swift in Sources */,
 				3FE6EFDC246DBE73000F966A /* HotKey.swift in Sources */,
+				4D5BB6DAC85374A60233231F /* AudioObjectPool.swift in Sources */,
+				947A71E4D5B668561BBDB4D5 /* Utils.swift in Sources */,
+				02AF96E0E3932BB0784895CD /* AudioObject+Helpers.swift in Sources */,
+				EDE9E8ED96C43CED0B928357 /* Bool+Extensions.swift in Sources */,
+				BE456DDA3C2B2BE2AEB046B0 /* AudioDevice.swift in Sources */,
+				DC27165D7FBF62A4A351506A /* AudioHardware.swift in Sources */,
+				8C6F463113FD1CF9D8AB414E /* AudioObject.swift in Sources */,
+				76A9A2B9712B0D55687802AC /* AudioStream.swift in Sources */,
+				E09B7FC97E1532A13DCFC6C9 /* BundleInfo.swift in Sources */,
+				51B5B6A3EE11384211F169A4 /* NotificationCenter.swift in Sources */,
+				09911EE3B28C86570DD24582 /* AudioDeviceEvent.swift in Sources */,
+				546CF2B7BA59377C1B72CF19 /* AudioHardwareEvent.swift in Sources */,
+				7AABFBF1F2FBD72A3004048D /* AudioStreamEvent.swift in Sources */,
+				2EBBDD9F1EBED472B60C6BC0 /* Direction.swift in Sources */,
+				00093D3575B3B79F0D037FCD /* TerminalType.swift in Sources */,
+				1C2D553961992411958A2EEF /* TransportType.swift in Sources */,
+				260C92CD0814C136E6E5B83F /* VolumeInfo.swift in Sources */,
+				3DC4BF907FF50D1AB841774C /* Event.swift in Sources */,
+				4AD6DE280868E21A9697587E /* EventSubscriber.swift in Sources */,
+				BA72E89B27C3CCD2F945E923 /* MicrophoneMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -270,14 +408,17 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -285,8 +426,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -314,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -322,14 +466,17 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -337,9 +484,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -351,7 +500,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -360,9 +510,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = PushToTalk/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yulrizka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -376,9 +530,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = PushToTalk/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yulrizka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -392,6 +550,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -401,7 +560,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PushToTalkTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yulrizka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -415,12 +579,18 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PushToTalkTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yulrizka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
