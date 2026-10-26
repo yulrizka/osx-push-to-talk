@@ -6,40 +6,30 @@
 //  Copyright © 2016 yulrizka. All rights reserved.
 //
 
-import Cocoa
-
-protocol AssociatedImage {
-    func image() -> NSImage
-    func title() -> String
-}
+import AppKit
 
 enum MicrophoneStatus {
-    case Muted
-    case Speaking
-    case HotKeySet
-}
+    case muted
+    case speaking
+    case disabled
+    case recordingHotKey
 
-extension MicrophoneStatus: AssociatedImage {
-    func image() -> NSImage {
-        switch self {
-        case .Muted:
-            return NSImage(named: "statusIconMute")!
-        case .Speaking:
-            return NSImage(named: "statusIconTalk")!
-        case .HotKeySet:
-            return NSImage(named: "statusIconHotKeySet")!
+    var isMuted: Bool { self == .muted || self == .recordingHotKey }
+
+    var toggleTitle: String { self == .disabled ? "Enable" : "Disable" }
+
+    var image: NSImage {
+        let (symbol, color, label): (String, NSColor?, String) = switch self {
+        case .muted: ("mic.slash.fill", nil, "Microphone muted")
+        case .speaking: ("mic.fill", .systemGreen, "Microphone live")
+        case .disabled: ("mic.fill", .systemGray, "PushToTalk disabled, microphone open")
+        case .recordingHotKey: ("keyboard", nil, "Waiting for a new hotkey")
         }
-    }
-    
-    func title() -> String {
-        switch self {
-        case .Muted:
-            return "Disable"
-        case .Speaking:
-            return "Enable"
-        case .HotKeySet:
-            return "Set HotKey"
-        }
+        var configuration = NSImage.SymbolConfiguration(pointSize: 16, weight: .regular)
+        if let color { configuration = configuration.applying(.init(paletteColors: [color])) }
+        let image = NSImage(systemSymbolName: symbol, accessibilityDescription: label)!.withSymbolConfiguration(configuration)!
+        // Template images follow the menu bar appearance; colored ones must not be templates.
+        image.isTemplate = color == nil
+        return image
     }
 }
-

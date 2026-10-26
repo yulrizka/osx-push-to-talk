@@ -8,7 +8,7 @@
 //  Modified from https://github.com/HanZhongShuai/Learning-materials/blob/b934c86c6e5239d3370b22301203e2dfc6f0a492/iina-master/iina/KeyCodeHelper.swift
 
 
-class KeyCodeHelper {
+enum KeyCodeHelper {
 
     static let keyMap: [UInt16 : String] = [
         0x00: "a",
@@ -82,6 +82,7 @@ class KeyCodeHelper {
         0x33: "⌫",
         0x35: "⎋",
         0x37: "⌘",
+        0x36: "Right-⌘",
         0x38: "⇧",
         0x39: "⇪",
         0x3A: "⌥",
@@ -126,11 +127,7 @@ class KeyCodeHelper {
         0x7F: "⌽",
     ]
 
-    static func KeyChars(keyCode: UInt16) -> String {
-        if let chars: String = keyMap[keyCode] {
-            return chars
-        } else {
-            return ""
-        }
+    static func keyChars(keyCode: UInt16) -> String {
+        keyMap[keyCode] ?? ""
     }
 }

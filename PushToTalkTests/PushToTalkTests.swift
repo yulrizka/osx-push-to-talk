@@ -2,35 +2,27 @@
 //  PushToTalkTests.swift
 //  PushToTalkTests
 //
-//  Created by Ahmy Yulrizka on 17/03/15.
-//  Copyright (c) 2015 yulrizka. All rights reserved.
-//
 
-import Cocoa
+import AppKit
 import XCTest
+@testable import PushToTalk
 
-class PushToTalkTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+final class PushToTalkTests: XCTestCase {
+    @MainActor func testHotKeyIgnoresExtraModifiers() {
+        XCTAssertTrue(HotKey.matches([.option], hotkey: .option))
+        XCTAssertTrue(HotKey.matches([.option, .capsLock], hotkey: .option), "caps lock state is not a held modifier")
+        XCTAssertFalse(HotKey.matches([.option, .command], hotkey: .option))
+        XCTAssertFalse(HotKey.matches([], hotkey: .option))
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+
+    @MainActor func testOnlyMutedStatesMuteTheDevice() {
+        XCTAssertTrue(MicrophoneStatus.muted.isMuted)
+        XCTAssertTrue(MicrophoneStatus.recordingHotKey.isMuted)
+        XCTAssertFalse(MicrophoneStatus.speaking.isMuted)
+        XCTAssertFalse(MicrophoneStatus.disabled.isMuted)
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+
+    @MainActor func testDefaultHotKeyIsRightOption() {
+        XCTAssertEqual(KeyCodeHelper.keyChars(keyCode: 61), "Right-⌥")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

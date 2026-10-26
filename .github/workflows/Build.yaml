@@ -1,28 +1,35 @@
 name: Build
 
-on: 
+on:
   push:
-    branches:
-      - master
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-
   build:
-    runs-on: [macos-latest]
+    runs-on: macos-26-intel # macos-latest (arm64) jobs were cancelled twice: no runner was acquired
     steps:
-      - uses: actions/checkout@v2
-            
-      - run: >
-          xcodebuild -project 'PushToTalk.xcodeproj' 
-          'CODE_SIGN_IDENTITY=-'
-          -configuration 'Release'
-          'SYMROOT=build'
-          
-      - run: |
-          cd build/Release/
-          zip -r PushToTalk.app.zip PushToTalk.app 
-          
-      - uses: actions/upload-artifact@v2
+      - uses: actions/checkout@v7
+
+      - name: Select the newest Xcode on the runner
+        run: |
+          sudo xcode-select -s "$(ls -d /Applications/Xcode_*.app | grep -vi beta | sort -V | tail -1)"
+          xcodebuild -version
+
+      - name: Build a universal Release binary
+        run: xcodebuild -project PushToTalk.xcodeproj -target PushToTalk -configuration Release CODE_SIGN_IDENTITY=- SYMROOT=build build
+
+      - name: Check that the binary contains both architectures
+        run: |
+          archs=$(lipo -archs build/Release/PushToTalk.app/Contents/MacOS/PushToTalk)
+          echo "architectures: $archs"
+          [[ $archs == *x86_64* && $archs == *arm64* ]]
+
+      - name: Zip the app
+        run: ditto -c -k --keepParent build/Release/PushToTalk.app build/Release/PushToTalk.app.zip
+
+      - uses: actions/upload-artifact@v7
         with:
           name: PushToTalk.app
           path: build/Release/PushToTalk.app.zip
